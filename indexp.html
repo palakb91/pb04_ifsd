@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Game</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="indexp.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="game-header">
+        <h1 class="game-title">Memory Match</h1>
+    </div>
+
+    <div class="difficulty-selector">
+        <button class="difficulty-btn easy active" onclick="setDifficulty('easy')">Easy</button>
+        <button class="difficulty-btn medium" onclick="setDifficulty('medium')">Medium</button>
+        <button class="difficulty-btn hard" onclick="setDifficulty('hard')">Hard</button>
+    </div>
+
+    <div class="game-stats">
+        <div class="stat-item">
+            <div class="stat-label">Time Left</div>
+            <div class="stat-value timer" id="timer">01:00</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-label">Moves</div>
+            <div class="stat-value" id="moves">0</div>
+        </div>
+        <button class="btn-play" onclick="restartGame()">New Game</button>
+    </div>
+
+    <div class="game-container easy" id="gameContainer"></div>
+
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <h2 class="result-title" id="resultTitle"></h2>
+            <p class="result-details" id="resultDetails"></p>
+            <button class="btn-play" onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+    <script src="indexp.js"></script>
+</body>
+</html>
